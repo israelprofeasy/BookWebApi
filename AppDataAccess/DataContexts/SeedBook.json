@@ -1,0 +1,51 @@
+{
+  [
+    {
+      "Title": "The Lion and the Jewel",
+      "Description": "Ut voluptate pariatur ex aliquip proident deserunt proident. Duis minim ipsum velit sunt quis irure veniam laboris cupidatat cillum commodo culpa. Non Lorem qui voluptate proident voluptate quis consectetur tempor consectetur elit fugiat esse eu. Fugiat elit anim ea sint mollit ea enim fugiat in ut.\r\n",
+      "ISBN": "123456",
+      "PublishedAt": "2021-08-14",
+      "Category": {
+        "Name": "Poem"
+      },
+      "Upload": {
+        "BookUrl": "https://randomuser.me/portrat41.jpg",
+        "CoverUrl": "https://randomuser.me/portrat61.jpg",
+        "BookPublicId": "74b2fa18-edeb-44ab-bb0b-c7d41afb0436",
+        "CoverPublicId": "23d0ade5-16b1-4631-8f07-7e23953bbb9b"
+      }
+    },
+    {
+      "Title": "Wealthy spoon",
+      "Description": "Aliqua qui occaecat commodo id dolor culpa. Culpa aute ex amet laborum consectetur occaecat incididunt. Tempor consectetur do voluptate anim adipisicing aliquip dolor tempor fugiat reprehenderit qui nulla incididunt incididunt. Nulla ullamco deserunt dolor cupidatat mollit irure exercitation sint deserunt est deserunt aliquip. Enim consequat officia duis ex irure. Adipisicing ipsum aliqua eu enim esse pariatur cillum esse ut labore.\r\n",
+      "ISBN": "234561",
+      "PublishedAt": "2020-05-27",
+      "Category": {
+        "Name": "fiction"
+      },
+      "Upload": {
+        "BookUrl": "https://randomuser.me/portrat53.jpg",
+        "CoverUrl": "https://randomuser.me/portrat63.jpg",
+        "BookPublicId": "8c4d5125-d0e9-48c6-8674-36c56ba993ae",
+        "CoverPublicId": "b9960aa7-495f-4378-8a1a-b23072650661"
+      }
+    },
+    {
+      "Title": "Chosen",
+      "Description": "Aute officia labore laborum consectetur elit qui incididunt sint nisi velit. Aute esse et officia ad commodo velit dolor sunt. Excepteur sint quis adipisicing est sit nulla esse qui pariatur.\r\n",
+      "ISBN": "123452",
+      "PublishedAt": "2017-07-02",
+      "Category": {
+        "Name": "drama"
+      },
+      "Upload": {
+        "BookUrl": "https://randomuser.me/portrat57.jpg",
+        "CoverUrl": "https://randomuser.me/portrat16.jpg",
+        "BookPublicId": "547c6a3e-8cee-48a4-8c27-d7f1019fb201",
+        "CoverPublicId": "5435fd31-0c58-475a-a62d-06869797f3a1"
+      }
+    }
+   
+    
+  ]
+}
