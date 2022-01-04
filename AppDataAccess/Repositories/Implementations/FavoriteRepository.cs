@@ -22,9 +22,9 @@ namespace BookWebApi.AppDataAccess.Repositories.Implementations
             return await SaveChanges();
         }
 
-        public Task<IEnumerable<AppUser>> BookFavoriteUsers(string bookId)
+        public async Task<IEnumerable<AppUser>> BookFavoriteUsers(string bookId)
         {
-            throw new System.NotImplementedException();
+            return await _ctx.FavoriteBook.Where(x => x.BookId == bookId).Include(x => x.AppUser).Select(x => x.AppUser).ToListAsync();
         }
 
         public async Task<bool> Delete<T>(T entity)
@@ -36,9 +36,25 @@ namespace BookWebApi.AppDataAccess.Repositories.Implementations
 
         public async Task<IEnumerable<Book>> GetFavoriteUserBooks(string userId)
         {
-            var response = _ctx.FavoriteBook.Where(x => x.AppUserId == userId);
-            return await _ctx.Book.Where(x => response.Any(y => x.Id==y.BookId)).ToListAsync();
-            //throw new System.NotImplementedException();
+            //var response = _ctx.FavoriteBook.Where(x => x.AppUserId == userId);
+            //return await _ctx.Book.Where(x => response.Any(y => x.Id==y.BookId)).ToListAsync();
+
+            return await _ctx.FavoriteBook.Where(x => x.AppUserId == userId).Include(x => x.Book).Select(x => x.Book).ToListAsync();
+        }
+
+        public async Task<IEnumerable<AppUser>> GetFavoriteUserBooksByCity(string city)
+        {
+            return await _ctx.FavoriteBook.Include(x => x.AppUser).Select(x => x.AppUser).Include(x => x.Address).Where(x => x.Address.City == city).ToListAsync();
+        }
+
+        public async Task<IEnumerable<AppUser>> GetFavoriteUserBooksByCountry(string country)
+        {
+            return await _ctx.FavoriteBook.Include(x => x.AppUser).Select(x => x.AppUser).Include(x => x.Address).Where(x => x.Address.Country == country).ToListAsync();
+        }
+
+        public async Task<FavouriteBook> GetFavouriteBook(string userId, string bookId)
+        {
+            return await _ctx.FavoriteBook.Where(x => x.AppUserId == userId && x.BookId == bookId).FirstOrDefaultAsync();
         }
 
         public async Task<int> RowCount()

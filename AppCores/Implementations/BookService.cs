@@ -1,6 +1,8 @@
-﻿namespace BookWebApi.AppCores.Implementations
+﻿using BookWebApi.AppCores.Interfaces;
+
+namespace BookWebApi.AppCores.Implementations
 {
-    public class BookService
+    public class BookService : IBookServices
     {
     }
 }

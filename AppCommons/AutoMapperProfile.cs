@@ -20,6 +20,10 @@ namespace BookWebApi.AppCommons
                .ForMember(d => d.FullName, x => x.MapFrom(x => $"{x.FirstName} {x.LastName}"));
 
             CreateMap<AppUser, UserToReturnDto>();
+            CreateMap<RegisterDto, Address>();
+            CreateMap<Author, AuthorDetailDto>();
+            CreateMap<AuthorDto, Author>();
+            CreateMap<Author, AuthorListDto>();
         }
 
        

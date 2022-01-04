@@ -11,6 +11,6 @@ namespace BookWebApi.AppDataAccess.Repositories.Interfaces
         Task<IEnumerable<Book>> GetBookByName(string name);
         Task<IEnumerable<Book>> GetBooksByCategory(string categoryId);
         Task<IEnumerable<Book>> GetBooksByAuthor(string authorId);
-        
+        Task<Book> GetBookByISBN(string isbn);
     }
 }

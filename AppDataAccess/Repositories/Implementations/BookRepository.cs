@@ -38,6 +38,11 @@ namespace BookWebApi.AppDataAccess.Repositories.Implementations
             return await _ctx.Book.Where(x => x.Id ==id).FirstOrDefaultAsync();
         }
 
+        public async Task<Book> GetBookByISBN(string isbn)
+        {
+            return await _ctx.Book.Where(x =>x.ISBN == isbn).FirstOrDefaultAsync();
+        }
+
         public async Task<IEnumerable<Book>> GetBookByName(string name)
         {
             return await _ctx.Book.Where(x => x.Title.Contains(name)).ToListAsync();
@@ -45,8 +50,8 @@ namespace BookWebApi.AppDataAccess.Repositories.Implementations
 
         public async Task<IEnumerable<Book>> GetBooksByAuthor(string authorId)
         {
-            //return await _ctx.Book_Author.Where(x => x.AuthorId == authorId).Select(n => GetBookById(n.BookId));
-            throw new System.NotImplementedException();
+            return await _ctx.Book_Author.Where(x => x.AuthorId == authorId).Include(c => c.Book).Select(c => c.Book).ToListAsync();
+            
         }
 
         public async Task<IEnumerable<Book>> GetBooksByCategory(string categoryId)
